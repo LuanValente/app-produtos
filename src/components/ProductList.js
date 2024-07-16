@@ -23,7 +23,7 @@ const ProductList = () => {
   // Função para buscar produtos na API
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/products');
+      const response = await axios.get('http://localhost:3001/products');
       setProducts(response.data);
     } catch (error) {
       setError('Erro ao buscar produtos');
@@ -40,7 +40,7 @@ const ProductList = () => {
   // Função para deletar um produto
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/products/${id}`);
+      await axios.delete(`http://localhost:3001/products/${id}`);
       fetchProducts();
       setSuccess(true);
     } catch (error) {

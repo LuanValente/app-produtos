@@ -36,10 +36,10 @@ const ProductForm = ({ onSave, editProduct, setEditProduct }) => {
     setLoading(true);
     try {
       if (editProduct) {
-        await axios.put(`http://localhost:8080/products/${editProduct.id}`, formData);
+        await axios.put(`http://localhost:3001/products/${editProduct.id}`, formData);
         setEditProduct(null);
       } else {
-        await axios.post('http://localhost:8080/products', formData);
+        await axios.post('http://localhost:3001/products', formData);
       }
       setFormData({ nome: '', descricao: '', preco: '' });
       onSave();
